@@ -1,4 +1,4 @@
-package pgs.javaDev;
+ 	package pgs.javaDev;
 
 public class TextTree {
 	
@@ -8,9 +8,15 @@ public class TextTree {
 	private static String direction;
 
 	public static void main(String[] args) {
-		character = input.getCharacter();
+		System.out.println("Podaj wysokoœæ choinki");
 		height = input.getHeight();
+		
+		System.out.println("Podaj znak do wyœwietlenia");
+		character = input.getCharacter();
+		
+		System.out.println("Podaj kierunek [up, down, left, right]");
 		direction = input.getDirection();
+		
 		TreeFactory treeFactory = new TreeFactory();
 		Tree tree = treeFactory.getTree(character, height, direction);
 		tree.print();
