@@ -11,19 +11,21 @@ public class TreeRight implements Tree {
 	private Character character;
 
 	@Override
-	public void print() {
+	public String print() {
+		StringBuilder strBuilder = new StringBuilder();
 		for (int i = 0; i < height; i++) {
-            for (int j = 0; j < i + 1; j++) {
-                System.out.print(character);
-            }
-            System.out.println();
+            for (int j = 0; j < i + 1; j++)
+            	strBuilder.append(character);
+            
+            strBuilder.append("\n");
         }
 
         for (int i = height - 1; i > 0; i--) {
-            for (int j = i; j > 0; j--) {
-                System.out.print(character);
-            }
-            System.out.println();
+            for (int j = i; j > 0; j--)
+            	strBuilder.append(character);
+            
+            strBuilder.append("\n");
         }
+        return strBuilder.toString();
 	}
 }

@@ -1,4 +1,4 @@
- 	package pgs.javaDev;
+package pgs.javaDev;
 
 public class TextTree {
 	
@@ -18,8 +18,8 @@ public class TextTree {
 		direction = input.getDirection();
 		
 		TreeFactory treeFactory = new TreeFactory();
-		Tree tree = treeFactory.getTree(character, height, direction);
-		tree.print();
+		Tree tree = new RedTreeDecorator(treeFactory.getTree(character, height, direction));
+		System.out.println(tree.print());
 	}
 
 }

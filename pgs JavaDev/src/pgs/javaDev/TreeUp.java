@@ -11,17 +11,17 @@ public class TreeUp implements Tree {
 	private Character character;
 
 	@Override
-	public void print() {
+	public String print() {
+		StringBuilder strBuilder = new StringBuilder();
 		for (int level = 0; level < height; level++) {
-            String format = "%" + (height - level) + "c";
-            System.out.printf(format, ' ');
-            for (int j = 0; j < level + 1; j++) {
-                System.out.print(character);
-            }
-            for (int j = 0; j < level; j++) {
-                System.out.print(character);
-            }
-            System.out.println();
+            for (int i = 0; i < height - level; i++)
+            	strBuilder.append(' ');
+            
+            for (int j = 0; j < (2*level+1); j++)
+            	strBuilder.append(character);
+            
+            strBuilder.append("\n");
         }
+		return strBuilder.toString();
 	}
 }

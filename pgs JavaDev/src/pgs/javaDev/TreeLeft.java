@@ -11,23 +11,27 @@ public class TreeLeft implements Tree {
 	private Character character;
 
 	@Override
-	public void print() {
-		for (int i = 0; i < height; i++) {
-            String format = "%" + (height - i) + "c";
-            System.out.printf(format, ' ');
-            for (int j = 0; j < i + 1; j++) {
-                System.out.print(character);
-            }
-            System.out.println();
+	public String print() {
+		StringBuilder strBuilder = new StringBuilder();
+		for (int level = 0; level < height; level++) {
+            for (int j = 0; j < height-level-1; j++)
+            	strBuilder.append(' ');
+            
+            for (int i = 0; i < level+1; i++)
+            	strBuilder.append(character);
+            
+            strBuilder.append("\n");
         }
-
-        for (int i = height - 1; i > 0; i--) {
-            String format = "%" + (height - i + 1) + "c";
-            System.out.printf(format, ' ');
-            for (int j = i; j > 0; j--) {
-                System.out.print(character);
-            }
-            System.out.println();
+		
+        for (int level = 0; level < height-1; level++) {
+            for (int j = 0; j < level+1; j++)
+            	strBuilder.append(' ');
+            
+            for (int i = level; i < height-1; i++)
+            	strBuilder.append(character);
+            
+            strBuilder.append("\n");
         }
+        return strBuilder.toString();
 	}
 }

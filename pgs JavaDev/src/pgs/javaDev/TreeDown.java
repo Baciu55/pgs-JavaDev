@@ -11,19 +11,17 @@ public class TreeDown implements Tree {
 	private Character character;
 
 	@Override
-	public void print() {
-		for (int i = height; i > 0; i--) {
-            String format = "%" + (height - i + 1) + "c";
-            System.out.printf(format, ' ');
-            for (int j = i; j > 0 + 1; j--) {
-                System.out.print(character);
-            }
-            for (int j = i; j > 0; j--) {
-                System.out.print(character);
-            }
-            System.out.println();
+	public String print() {
+		StringBuilder strBuilder = new StringBuilder();
+		for (int level = 0; level < height; level++) {
+            for (int i = 0; i < level; i++)
+            	strBuilder.append(' ');
+            	
+            for (int j = 0; j < (height*2-1)-level*2 ; j++)
+            	strBuilder.append(character);
+            
+            strBuilder.append("\n");
         }
+		return strBuilder.toString();
 	}
-	
-	
 }
