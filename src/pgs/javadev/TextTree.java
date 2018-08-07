@@ -8,13 +8,13 @@ public class TextTree {
 	private static String direction;
 
 	public static void main(String[] args) {
-		System.out.println("Podaj wysokoœæ choinki");
+		System.out.println("Enter tree height");
 		height = input.getHeight();
 		
-		System.out.println("Podaj znak do wyœwietlenia");
+		System.out.println("Enter cheracter to display");
 		character = input.getCharacter();
 		
-		System.out.println("Podaj kierunek [up, down, left, right]");
+		System.out.println("Enter direction [up, down, left, right]");
 		direction = input.getDirection();
 		
 		TreeFactory treeFactory = new TreeFactory();

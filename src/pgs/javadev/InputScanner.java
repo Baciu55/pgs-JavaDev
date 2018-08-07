@@ -16,7 +16,7 @@ public class InputScanner {
             try {
                 return InputValidator.validateHeight(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Podaj liczbe ca³kowit¹ [liczba musi byæ wiêksza od 0]");
+                System.out.println("Enter integer number [bigger than 0]");
                 continue;
             }
         }
@@ -27,7 +27,7 @@ public class InputScanner {
             try {
                 return InputValidator.validateCharacter(scanner.nextLine());
             } catch (InputMismatchException e) {
-                System.out.println("Podaj znak do wyœwietlenia");
+                System.out.println("Enter character to display");
                 continue;
             }
         }
@@ -38,7 +38,7 @@ public class InputScanner {
             try {
                 return InputValidator.validateDirection(scanner.nextLine());
             } catch (InputMismatchException e) {
-            	System.out.println("Podaj kierunek [up, down, left, right]");
+            	System.out.println("Enter direction [up, down, left, right]");
                 continue;
             }
         }
